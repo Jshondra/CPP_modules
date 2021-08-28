@@ -1,16 +1,15 @@
-NAME		= megaphone
+NAME		= zombie
 
-SRCS		= megaphone.cpp 
+SRCS		= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
 CC			= clang++
 
-FLAGS 		= -Wall -Wextra -Werror -std=c++98
+FLAGS 		= -Wall -Wextra -Werror
 
 .cpp.o:
 			clang++ $(FLAGS) -c $< -o ${<:.cpp=.o}
-			
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
@@ -20,7 +19,6 @@ clean:
 
 fclean:		clean
 			rm -f $(NAME)
-
 re:			fclean all
 
 .PHONY:		all clean fclean re

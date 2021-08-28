@@ -1,6 +1,6 @@
-NAME		= phonebook
+NAME		= zombie
 
-SRCS		= phonebook.cpp contact.cpp
+SRCS		= main.cpp Zombie.cpp ZombieHorde.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
