@@ -1,4 +1,4 @@
-NAME		= orthdox_class
+NAME		= fixed
 
 SRCS		= main.cpp Fixed.cpp
 

@@ -1,6 +1,6 @@
-NAME		= orthdox_class
+NAME		= clap_trap
 
-SRCS		= main.cpp Fixed.cpp
+SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

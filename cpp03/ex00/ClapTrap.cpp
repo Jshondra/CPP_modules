@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( std::string str ) : name(str), hitpoints(10), attack_damage(0), energy_points(10)
+ClapTrap::ClapTrap( std::string str ) : name(str), hitpoints(10), energy_points(10), attack_damage(0)
 {
    std::cout << str <<" was born!"<< std::endl;
 }
