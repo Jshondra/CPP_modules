@@ -1,5 +1,10 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap()
+{
+	this->_energy_points = 50;
+}
+
 ScavTrap::ScavTrap( std::string str) : ClapTrap(str, 100, 50, 20)
 {
     std::cout << str << " Is ready to fight!" << std::endl;

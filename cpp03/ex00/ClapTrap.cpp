@@ -12,7 +12,7 @@ ClapTrap::~ClapTrap( void )
 
 void ClapTrap:: attack(std::string const & target)
 {
-	std::cout << "ClapTrap " << this->name << " attack "
+	std::cout << "ClapTrap " << this->name << " attacks "
 	<< target << ", causing " << this->attack_damage
 	<< " points of damage " << std::endl;
 }

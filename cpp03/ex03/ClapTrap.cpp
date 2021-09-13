@@ -2,6 +2,8 @@
 
 ClapTrap::ClapTrap(void) {}
 
+ClapTrap::ClapTrap(std::string str) : _name(str){}
+
 ClapTrap::ClapTrap( std::string str, int n, int n2, int n3 ) : _name(str), _hitpoints(n),  _energy_points(n2), _attack_damage(n3)
 {
    std::cout << str << " was born!" << std::endl;

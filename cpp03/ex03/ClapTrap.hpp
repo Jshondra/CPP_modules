@@ -14,6 +14,7 @@ class ClapTrap
 
 	public:
 		ClapTrap( std::string str, int n, int n2, int n3 );
+		ClapTrap(std::string str);
 		~ClapTrap( void );
 		ClapTrap & operator =(const ClapTrap &last);
 

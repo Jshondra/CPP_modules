@@ -3,7 +3,6 @@
 
 int main( void )
 {
-	// std::cout<<"Hello";
 	Fixed a;
 	Fixed b( a );
 	Fixed c;

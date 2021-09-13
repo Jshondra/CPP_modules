@@ -59,16 +59,16 @@ bool 	Fixed::operator<=(const Fixed & rhc) const
 	return (this->_fixed_n <= rhc.getRawBits());
 }
 
-bool 	Fixed::operator==(const Fixed & rhc) const
-{
-	return (this->_fixed_n < rhc.getRawBits());
-}
 
 bool 	Fixed::operator!=(const Fixed & rhc) const
 {
 	return (this->_fixed_n != rhc.getRawBits());
 }
 
+bool 	Fixed::operator==(const Fixed & rhc) const
+{
+	return (this->_fixed_n == rhc.getRawBits());
+}
 Fixed	Fixed::operator+(const Fixed & rhc)
 {
 	Fixed	t(this->toFloat() + rhc.toFloat());
