@@ -12,7 +12,7 @@ int main( void )
 	a.beRepaired(0);
 	b.attack(a.get_name());
 	a.takeDamage(b.get_damage());
-	a.beRepaired(20);
+	a.beRepaired(0);
 	std::cout << std::endl;
 
 	b.guardGate();
@@ -31,6 +31,12 @@ int main( void )
 	std::cout << std::endl;
 
 	c.highFivesGuys();
+	std::cout << std::endl;
+
+	a.beRepaired(0);
+	d.attack(a.get_name());
+	a.takeDamage(d.get_damage());
+	a.beRepaired(20);
 	std::cout << std::endl;
 
 	d.whoAmI();	

@@ -5,14 +5,15 @@ ScavTrap::ScavTrap()
 	this->_energy_points = 50;
 }
 
-ScavTrap::ScavTrap( std::string str) : ClapTrap(str, 100, 50, 20)
+ScavTrap::ScavTrap( std::string str) : ClapTrap(100, 50, 20)
 {
-    std::cout << str << " Is ready to fight!" << std::endl;
+	this->_name = str;
+    std::cout << "ScavTrap " << str << " Is ready to fight!" << std::endl;
 }
 
 ScavTrap::~ScavTrap( void )
 {
-	std::cout << this->get_name() << " destroyed" << std::endl;
+	std::cout << "ScavTrap " << this->get_name() << " burnt in fire" << std::endl;
 }
 
 void	ScavTrap:: guardGate()
