@@ -6,9 +6,9 @@
 class Brain
 {
 	public:
-		std::string ideas[100];
+		std::string *ideas;
 		Brain();
-		Brain(const Brain &);
+		Brain(Brain const &);
 		virtual ~Brain();
 		Brain & operator=(Brain const & a);
 };

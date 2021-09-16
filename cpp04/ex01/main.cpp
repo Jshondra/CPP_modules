@@ -5,22 +5,9 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
-	const WrongAnimal* lion = new WrongAnimal();
-	const WrongAnimal* cat = new WrongCat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	std::cout << std::endl;
-
-	lion->makeSound();
-	cat->makeSound();
+	//const Animal* meta = new Animal();
+	Dog* l = new Dog();
+	Cat* k = new Cat();
 
 	int count = 10;
 
@@ -29,11 +16,11 @@ int main()
 	for (int i = 0; i < count; i++)
 	{
 		if (i < 5 && std::cout << i << " ")
-			array[i] = new Cat();
+			array[i] = new Cat(*k);
 		else
 		{
 			std::cout << i << " ";
-			array[i] = new Dog();
+			array[i] = new Dog(*l);
 		}
 	}
 	for (int i = 0; i < count; i++)

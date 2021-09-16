@@ -12,13 +12,12 @@ class Cat : public Animal
 	public:
 		Cat();
 		virtual ~Cat();
-		Cat(const Cat & a);
+		Cat(Cat const & a);
 
 		Cat & operator=(Cat const & a);
-		
-		void	setIdea(int i, std::string idea);
-		std::string	getIdea(int i) const;
+
 		virtual void makeSound() const;
+		Brain * getBrain( void ) const;
 };
 
 #endif
