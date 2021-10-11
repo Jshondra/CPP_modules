@@ -1,30 +1,26 @@
-#include "WrongCat.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
 
 
 int main()
 {
-	//const Animal* meta = new Animal();
-	Dog* l = new Dog();
-	Cat* k = new Cat();
-
-	int count = 10;
-
-	Animal* array[count];
-	
-	for (int i = 0; i < count; i++)
-	{
-		if (i < 5 && std::cout << i << " ")
-			array[i] = new Cat(*k);
-		else
-		{
-			std::cout << i << " ";
-			array[i] = new Dog(*l);
-		}
-	}
-	for (int i = 0; i < count; i++)
-		delete array[i];
-	while(true)
-		;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+	return 0;
 }

@@ -15,18 +15,17 @@ Ice::Ice( Ice const & ): AMateria("Ice")
 	std::cout << "Ice copy destructor" << std::endl;
 }
 
-Ice & Ice::operator=( Ice const & )
+Ice &		Ice::operator=( Ice const & )
 {
 	return (*this);
 }
 
-void Ice::use( ICharacter& target )
+void		Ice::use( ICharacter& target )
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
-	return;
 }
 
-AMateria* Ice::clone( void ) const
+AMateria*	Ice::clone( void ) const
 {
 	return (new Ice(*this));
 }

@@ -12,21 +12,20 @@ Cure::~Cure( void )
 
 Cure::Cure( Cure const & ): AMateria("cure")
 {
-	std::cout << "Cure copy destructor" << std::endl;
+	std::cout << "Cure copy constructor" << std::endl;
 }
 
-Cure & Cure::operator=( Cure const & )
+Cure &		Cure::operator=( Cure const & )
 {
 	return (*this);
 }
 
-void Cure::use( ICharacter& target )
+void		Cure::use( ICharacter& target )
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
-	return;
 }
 
-AMateria* Cure::clone( void ) const
+AMateria*	Cure::clone( void ) const
 {
 	return (new Cure(*this));
 }

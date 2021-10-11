@@ -1,15 +1,10 @@
-NAME		= materia
+NAME		= bureaucrat
 
 SRCS		= main.cpp \
-			AMateria.cpp \
-						Cure.cpp \
-							Ice.cpp \
-							 MateriaSource.cpp \
-							 	Character.cpp \
+			Bureaucrat.cpp
 
-HEADER		= AMateria.hpp  MateriaSource.hpp \
-			Cure.hpp Ice.hpp IMateriaSource.hpp \
-				ICharacter.hpp Character.hpp
+HEADER		= Bureaucrat.hpp
+
 OBJS		= $(SRCS:.cpp=.o)
 
 CC			= clang++
