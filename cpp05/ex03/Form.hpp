@@ -18,7 +18,7 @@ class Form
 		Form();
 
 	public:
-		~Form();
+		virtual ~Form();
 		Form(Form const & a);
 		Form( std::string name, int grade_s, int grade_e);
 
@@ -30,6 +30,11 @@ class Form
 		int			get_g_execute( void ) const;
 		bool		get_log( void ) const;
 		void		beSigned( Bureaucrat const & o);
+
+		void		execute(Bureaucrat const & executor) const;
+
+		virtual void	doing_form_work( void ) const = 0;
+		virtual Form *  make_another( void ) const = 0;
 
 	class GradeTooLowException: public std::exception
 	{
@@ -57,6 +62,15 @@ class Form
 				return ("It's signed already!");
 			}
 	};
+
+	class FormIsNotSignedException: public std::exception
+	{
+		public:
+			virtual char const * what() const throw()
+			{
+				return ("Form is not signed!!!");
+			}    
+    };
 };
 
 	std::ostream & operator<<(std::ostream & o, Form const & f);

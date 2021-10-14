@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -16,15 +19,18 @@ class Bureaucrat
 		Bureaucrat( Bureaucrat const & a );
  		Bureaucrat & operator=( Bureaucrat const & a );
 
-		void inc( void );
-		void dec( void );
+		void	inc( void );
+		void	dec( void );
+		void	signForm(Form & f);
+
+		void	executeForm (Form const & form);
 
 		//getters//
 		std::string getName() const; 
-		int	getGrade() const;
+		int			getGrade() const;
 
 		//setter//
-		void setGrade( int n );
+		void		setGrade( int n );
 
 		//exeptions//
 	class GradeTooLowException: public std::exception

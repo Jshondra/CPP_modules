@@ -76,3 +76,13 @@ std::ostream &	operator<<(std::ostream & o, Form const & f)
 	<< "Grade to execute is " << f.get_g_execute() << std::endl;
 	return o;
 }
+
+void        Form::execute(Bureaucrat const & e) const
+{
+    if (!this->_grade_sign)
+        throw FormIsNotSignedException();
+    if ( e.getGrade() <= this->_grade_execute)
+        this->doing_form_work();
+    else
+        throw GradeTooLowException();
+}

@@ -80,7 +80,7 @@ void    Bureaucrat::signForm( Form & f )
 	{
 		f.beSigned(*this);
 		std::cout << "Bureaucrat " << this->name << " signed "
-		<< f.get_name() << ">" << std::endl;
+		<< f.get_name() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -88,4 +88,20 @@ void    Bureaucrat::signForm( Form & f )
 		<< f.get_name() << " because ";
 		std::cout << e.what() << std::endl;
 	}
+}
+
+void    Bureaucrat::executeForm( Form const & f )
+{
+    try
+    {
+        f.execute(*this);
+        std::cout << "Bureaucrat " << this->name << " executed the form "
+        << f.get_name() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "Bureaucrat " << this->name
+		<< " cannot execute the form " << f.get_name() << " because " <<
+		std::cout << e.what() << std::endl;
+    }
 }

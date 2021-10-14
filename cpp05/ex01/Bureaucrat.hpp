@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -18,6 +21,7 @@ class Bureaucrat
 
 		void inc( void );
 		void dec( void );
+		void signForm(Form & f);
 
 		//getters//
 		std::string getName() const; 
@@ -30,7 +34,7 @@ class Bureaucrat
 	class GradeTooLowException: public std::exception
 	{
 		public:
-			char const * say() const throw()
+			char const * what() const throw()
 			{
 				return "Grade is lower than norm";
 			}

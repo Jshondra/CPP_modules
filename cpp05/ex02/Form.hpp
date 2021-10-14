@@ -31,6 +31,10 @@ class Form
 		bool		get_log( void ) const;
 		void		beSigned( Bureaucrat const & o);
 
+		void		execute(Bureaucrat const & executor) const;
+
+		virtual void	doing_form_work( void ) const = 0;
+
 	class GradeTooLowException: public std::exception
 	{
 		public:
@@ -57,6 +61,15 @@ class Form
 				return ("It's signed already!");
 			}
 	};
+
+	class FormIsNotSignedException: public std::exception
+	{
+		public:
+			virtual char const * what() const throw()
+			{
+				return ("Form is not signed!!!");
+			}    
+    };
 };
 
 	std::ostream & operator<<(std::ostream & o, Form const & f);
